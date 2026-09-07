@@ -1,17 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const button = document.querySelector(".watch-button");
+    const watchButton =
+        document.querySelector(".watch-button");
 
-    if (!button) return;
+    if (!watchButton) {
+        return;
+    }
 
-    button.addEventListener("click", () => {
 
-        button.style.transform = "scale(0.96)";
+    watchButton.addEventListener(
+        "click",
+        function () {
 
-        setTimeout(() => {
-            button.style.transform = "";
-        }, 150);
+            watchButton.classList.add(
+                "button-clicked"
+            );
 
-    });
+            setTimeout(function () {
+
+                watchButton.classList.remove(
+                    "button-clicked"
+                );
+
+            }, 250);
+
+        }
+    );
 
 });
